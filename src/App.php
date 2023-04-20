@@ -8,7 +8,7 @@ class App
 {
     public function doSomething(): string
     {
-        $foo = (string)23;
+        $foo = (string)26;
         return $foo;
     }
 }

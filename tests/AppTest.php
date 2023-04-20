@@ -11,6 +11,6 @@ class AppTest extends TestCase
     {
         $app = new App();
 
-        $this->assertSame('23', $app->doSomething());
+        $this->assertSame('26', $app->doSomething());
     }
 }
