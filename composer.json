@@ -1,0 +1,44 @@
+{
+    "name": "smo/test-dev-ci",
+    "description": "Test development continuous integration pipeline",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TestDevCi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TestDevCi\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "symplify/easy-coding-standard": "^11.3",
+        "phpstan/phpstan": "^1.10",
+        "vimeo/psalm": "^5.9",
+        "phpunit/phpunit": "^10.1",
+        "phpro/grumphp": "^1.15"
+    },
+    "scripts": {
+        "precommit-check": [
+            "@cs-check",
+            "@test",
+            "@inspect",
+            "@psalm"
+        ],
+        "cs-check": "ecs check src",
+        "cs-fix": "ecs check src --fix",
+        "inspect": "phpstan analyse src -l9 --ansi",
+        "test": "phpunit --colors=always",
+        "psalm": "psalm"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
+    }
+}
